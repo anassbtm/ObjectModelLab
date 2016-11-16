@@ -7,4 +7,5 @@ console.log(data.length);
 
 describe('Sensor model tests', () => {
   /* TODO: Ecrire ici la suite de tests pourle modèle objet.*/
+  
 });
