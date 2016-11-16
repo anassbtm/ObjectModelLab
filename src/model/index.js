@@ -10,13 +10,15 @@ export class Datum extends Data {
         super();
         this.value = value;
     }
+	
     get value() {
         return this.value1;
     }
+	
     set value(values) {
-		if(Number.isInteger(values)){
-			this.value = values;
-		}else throw "Err : valeur doit être un entier ";
+	if(Number.isInteger(values)){
+		this.value = values;
+	}else throw "Err : valeur doit être un entier ";
     }
 }
 
@@ -26,16 +28,19 @@ export class TimeSeries extends Data {
         this.values=value;
         this.labels=label;
     }
+	
     get values() {
         return this.values;
     }
+	
     set values(value) {
-		for (i=0;i<arr.length;i++){
-			//les valeurs doivent être des entier positif dans une liste
-		if(Number.isInteger(values) && Array.isArray(value[i]) || value<=0){
-			this.values = value;
-		}else throw "Err : valeurs doivent être des entier positif dans une liste ";
+	for (let i=0;i<values.length;i++){
+	//les valeurs doivent être des entier positif dans une liste
+	if(Number.isInteger(values) && Array.isArray(values[i]) || values<=0){
+		this.values = value;
+	}else throw "Err : valeurs doivent être des entier positif dans une liste ";
     }
+	    
     set labels(label) {
         this.labels = label;
     }
@@ -43,31 +48,23 @@ export class TimeSeries extends Data {
         return this.labels;
     }
 
-
-	ToString(string) {
+    ToString(string) {
 	return (`[${this.values}, ${this.labels}]`);
-	
-	}	
+     }	
 }
 
 export class SensorType {
-  constructor() {
-    this.types = ['Temperature', 'Humdity', 'Light', 'Switch', 'Door', 'Fan_speed'];
-  }
-  get type() {
-    return this.types;
-  }
-  set type(type) {
-    this.types = type;
-  }
-  ToString(string) {
-    for (let i = 0; i < this.types.length; i += 1) {
-      if (string === this.types[i]) {
-        return true;
-      }
-    }
-    return false;
-  }
+     constructor() {
+         this.types = ['TEMPERATURE', 'HUMDITY', 'LIGHT', 'SWITCH', 'DOOR', 'FAN_SPEED'];
+     }
+  
+     get type() {
+        return this.types;
+     }
+  
+     set type(type) {
+        this.types = type;
+     }
 }
 
 export class Sensor {
