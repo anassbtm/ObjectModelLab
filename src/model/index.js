@@ -47,11 +47,7 @@ export class TimeSeries extends Data {
 	ToString(string) {
 	return (`[${this.values}, ${this.labels}]`);
 	
-	}
-	
-	
-	
-	
+	}	
 }
 
 export class SensorType {
@@ -73,8 +69,6 @@ export class SensorType {
     return false;
   }
 }
-
-
 
 export class Sensor {
     constructor(id,name,type) {
